@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <link rel="stylesheet" href="css/style.css">
+    <title>about_me</title>
+</head>
+
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <a class="logo" data-aos="zoom-in" data-aos-duration="1500">
+                Fellipe <span>Lopes</span>
+            </a>
+            
+            <ul class="links">
+                <li class="link" data-aos="fade-up" data-aos-duration="1500" data-aos-delay="100" ><a href="#home" class="active">Home</a></li>
+                <li class="link" data-aos="fade-up" data-aos-duration="1500" data-aos-delay="200"><a href="#projects">Projects</a></li>
+                <li class="link" data-aos="fade-up" data-aos-duration="1500" data-aos-delay="300"><a href="#contact">Contact</a></li>
+            </ul>
+
+            <i class="fa-solid fa-bars hamburg" onclick="hamburg()"></i>
+        </div>
+            <div class="dropdown">
+                <li class="links">
+                    <a href="#home" class="active">Home</a>
+                    <a href="#projects">Projects</a>
+                    <a href="#contact">Contact</a>
+                    <i class="fa-solid fa-xmark cancel" onclick="cancel()"></i>
+                </li>
+            </div>
+    </nav>
+
+    <section class="home" id="home">
+        <div class="main-container">
+            <div class="main" data-aos="zoom-out" data-aos-duration="3000">
+                <img src="img/main.jpg" alt="">
+            </div>
+            <div class="content">
+                <h1 data-aos="fade-left" data-aos-duration="1500" data-aos-delay="700" >Hey, I'm <span>Fellipe</span></h1>
+                <div class="typewriter" data-aos="fade-right" data-aos-duration="1500" data-aos-delay="900">I'm a <span class="typewriter-text"></span><label for=""></label></div>
+                <p data-aos="flip-down" data-aos-duration="1500" data-aos-delay="1100">Desde pequeno curioso sobre como os computadores funcionam e a partir dessa curiosidade cresceu a vontade de aprender cada vez mais sobre o mundo da tecnologia, me levando a estudar programação e cibersegurança.</p>
+                <div class="social-links">
+                    <a href="https://www.linkedin.com/in/felps17ls/" data-aos="fade-up" data-aos-duration="1500" data-aos-delay="1300"><i class="fa-brands fa-linkedin"></i></a>
+                    <a href="https://github.com/FelpsLS" data-aos="fade-up" data-aos-duration="1500" data-aos-delay="1400"><i class="fa-brands fa-github"></i></a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="projects" id="projects">
+        <h2 class="heading">Projects</h2>
+        <div class="projects-box">
+            <div class="projects-card">
+                <h3>Keylogger</h3>
+                <img src="img/keylogger.png" alt="">
+                <p>Este é um projeto em C para um keylogger. Foi utilizado a biblioteca windows.h para o mapeamento da maioria das teclas e para ocultar a presença deste no sistema com a função ocultConsole, a utilização de arquivos para salvar as teclas pressionadas pelo usuário.</p>
+                <div class="projects-links">
+                    <a href="https://github.com/FelpsLS/Keylogger">Veja o projeto</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="contact" id="contact">
+        <h1>Contato</h1>
+        <div class="contact-info">
+            <img src="img/email.png" alt="ícone de email" class="icon-contact">
+            <!-- <p><a href="mailto:fellipelopessilva5@gmail.com">fellipelopessilva5@gmail.com</a></p> -->
+            <span><a href="mailto:fellipelopessilva5@gmail.com">fellipelopessilva5@gmail.com</a></span>
+        </div>
+    </section>
+
+
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+      AOS.init({offset:0});
+    </script>
+    <script src="js/script.js"></script>
+</body>
+
+</html>
