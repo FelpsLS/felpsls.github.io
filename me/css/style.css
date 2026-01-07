@@ -271,7 +271,8 @@ section{
     display: flex;
     justify-content: center;
     flex-direction: column;
-    height: 4rem;
+    min-height: 40vh;
+    height: auto;
 }
 
 #contact h1{
