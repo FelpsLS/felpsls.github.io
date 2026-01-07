@@ -5,7 +5,7 @@ function hamburg(){
 function cancel(){
     const navbar = document.querySelector(".dropdown")
     navbar.style.transform = "translateY(-500px)"
-    navbar.classList.toggle("dropdown")
+    //navbar.classList.toggle("dropdown")
 }
 // Typewriter Effect
 const texts = [
@@ -43,6 +43,16 @@ document.addEventListener("DOMContentLoaded", function(){
     const sections = document.querySelectorAll("section");
     let currentIndex = 0;
     let isScrolling = false;
+
+    const navLinks = document.querySelectorAll(".nav-container a, .dropdown a");
+    navLinks.forEach(link => {
+        link.addEventListener('click', (e) => {
+            const href = link.getAttribute('href');
+            if(href == '#home') currentIndex = 0;
+            if(href == '#projects') currentIndex = 1;
+            if(href == '#contact') currentIndex = 2;
+        });
+    });
 
     function scrollToSection(index){
         if(index >= 0 && index < sections.length){
