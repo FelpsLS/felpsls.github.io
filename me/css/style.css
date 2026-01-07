@@ -142,9 +142,7 @@ section{
 }
 
 .main-container .main{
-    width: 500px;
-    height: 65vh;
-    border-radius: 100%;
+    width: 200px;
     overflow: hidden;
     box-shadow: 0 0 50px var(--main-color);
 }

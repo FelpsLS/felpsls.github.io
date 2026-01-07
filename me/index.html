@@ -1,85 +1,176 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fellipe Lopes | Portfolio</title>
+    
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
     <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
-    <link rel="stylesheet" href="css/style.css">
-    <title>about_me</title>
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'main': '#144ea5',    // A sua cor azul
+                        'bg-dark': '#000000',
+                    },
+                    fontFamily: {
+                        'poppins': ['Poppins', 'sans-serif'],
+                    },
+                    keyframes: {
+                        pulsar: {
+                            '0%, 100%': { transform: 'scale(1)' },
+                            '50%': { transform: 'scale(1.05)' },
+                        }
+                    },
+                    animation: {
+                        'pulsar': 'pulsar 1.5s ease-in-out infinite',
+                    },
+                    screens: {
+                        'custom-md': '884px', // O seu ponto de quebra personalizado
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600&display=swap');
+        
+        /* Ajuste fino para a barra de rolagem (opcional) */
+        ::-webkit-scrollbar {
+            width: 10px;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #144ea5;
+            border-radius: 5px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #000;
+        }
+    </style>
 </head>
 
-<body>
-    <nav class="navbar">
-        <div class="nav-container">
-            <a class="logo" data-aos="zoom-in" data-aos-duration="1500">
-                Fellipe <span>Lopes</span>
-            </a>
-            
-            <ul class="links">
-                <li class="link" data-aos="fade-up" data-aos-duration="1500" data-aos-delay="100" ><a href="#home" class="active">Home</a></li>
-                <li class="link" data-aos="fade-up" data-aos-duration="1500" data-aos-delay="200"><a href="#projects">Projects</a></li>
-                <li class="link" data-aos="fade-up" data-aos-duration="1500" data-aos-delay="300"><a href="#contact">Contact</a></li>
-            </ul>
+<body class="bg-black text-white font-poppins overflow-x-hidden selection:bg-main selection:text-white">
 
-            <i class="fa-solid fa-bars hamburg" onclick="hamburg()"></i>
-        </div>
-            <div class="dropdown">
-                <li class="links">
-                    <a href="#home" class="active">Home</a>
-                    <a href="#projects">Projects</a>
-                    <a href="#contact">Contact</a>
-                    <i class="fa-solid fa-xmark cancel" onclick="cancel()"></i>
-                </li>
-            </div>
+    <nav class="fixed top-0 w-full h-[10vh] z-50 flex justify-around items-center bg-black/80 backdrop-blur-md border-b border-white/10 transition-all">
+        
+        <a class="text-3xl font-bold cursor-pointer" data-aos="zoom-in" data-aos-duration="1500">
+            Fellipe <span class="text-main drop-shadow-[0_0_10px_rgba(20,78,165,0.8)]">Lopes</span>
+        </a>
+        
+        <ul class="hidden custom-md:flex">
+            <li class="mx-5" data-aos="fade-up" data-aos-duration="1500" data-aos-delay="100">
+                <a href="#home" class="relative text-lg font-medium transition duration-300 hover:text-main group">
+                    Home
+                    <span class="absolute -bottom-1 left-0 w-0 h-[3px] bg-main transition-all duration-300 group-hover:w-full"></span>
+                </a>
+            </li>
+            <li class="mx-5" data-aos="fade-up" data-aos-duration="1500" data-aos-delay="200">
+                <a href="#projects" class="relative text-lg font-medium transition duration-300 hover:text-main group">
+                    Projects
+                    <span class="absolute -bottom-1 left-0 w-0 h-[3px] bg-main transition-all duration-300 group-hover:w-full"></span>
+                </a>
+            </li>
+            <li class="mx-5" data-aos="fade-up" data-aos-duration="1500" data-aos-delay="300">
+                <a href="#contact" class="relative text-lg font-medium transition duration-300 hover:text-main group">
+                    Contact
+                    <span class="absolute -bottom-1 left-0 w-0 h-[3px] bg-main transition-all duration-300 group-hover:w-full"></span>
+                </a>
+            </li>
+        </ul>
+
+        <i class="fa-solid fa-bars text-3xl cursor-pointer absolute right-4 top-5 custom-md:hidden hover:text-main transition" onclick="hamburg()"></i>
     </nav>
 
-    <section class="home" id="home">
-        <div class="main-container">
-            <div class="main" data-aos="zoom-out" data-aos-duration="3000">
-                <img src="img/main.jpg" alt="">
-            </div>
-            <div class="content">
-                <h1 data-aos="fade-left" data-aos-duration="1500" data-aos-delay="700" >Hey, I'm <span>Fellipe</span></h1>
-                <div class="typewriter" data-aos="fade-right" data-aos-duration="1500" data-aos-delay="900">I'm a <span class="typewriter-text"></span><label for=""></label></div>
-                <p data-aos="flip-down" data-aos-duration="1500" data-aos-delay="1100">Desde pequeno curioso sobre como os computadores funcionam e a partir dessa curiosidade cresceu a vontade de aprender cada vez mais sobre o mundo da tecnologia, me levando a estudar programação e cibersegurança.</p>
-                <!-- <div class="social-links">
-                    <a href="https://www.linkedin.com/in/felps17ls/" data-aos="fade-up" data-aos-duration="1500" data-aos-delay="1300"><i class="fa-brands fa-linkedin"></i></a>
-                    <a href="https://github.com/FelpsLS" data-aos="fade-up" data-aos-duration="1500" data-aos-delay="1400"><i class="fa-brands fa-github"></i></a>
-                </div> -->
-            </div>
-        </div>
-    </section>
+    <div class="dropdown absolute top-0 w-full h-auto bg-black/90 backdrop-blur-lg z-40 shadow-[0_0_20px_black] transition-transform duration-300 ease-linear translate-y-[-500px] flex flex-col items-center">
+        <ul class="flex flex-col items-center w-full py-5">
+            <li class="w-full text-center group">
+                <a href="#home" class="block w-full py-4 text-white hover:bg-main transition duration-200">Home</a>
+            </li>
+            <li class="w-full text-center group">
+                <a href="#projects" class="block w-full py-4 text-white hover:bg-main transition duration-200">Projects</a>
+            </li>
+            <li class="w-full text-center group">
+                <a href="#contact" class="block w-full py-4 text-white hover:bg-main transition duration-200">Contact</a>
+            </li>
+            <i class="fa-solid fa-xmark text-3xl cursor-pointer mt-4 hover:text-main transition" onclick="cancel()"></i>
+        </ul>
+    </div>
 
-    <section class="projects" id="projects">
-        <h2 class="heading">Projects</h2>
-        <div class="projects-box">
-            <div class="projects-card">
-                <h3>Keylogger</h3>
-                <img src="img/keylogger.png" alt="">
-                <p>Este é um projeto em C para um keylogger. Foi utilizado a biblioteca windows.h para o mapeamento da maioria das teclas e para ocultar a presença deste no sistema com a função ocultConsole, a utilização de arquivos para salvar as teclas pressionadas pelo usuário.</p>
-                <div class="projects-links">
-                    <a href="https://github.com/FelpsLS/Keylogger">Veja o projeto</a>
+    <section class="home min-h-[90vh] w-full flex items-center justify-center pt-24 custom-md:pt-0" id="home">
+        <div class="main-container w-full h-full flex flex-col custom-md:flex-row justify-evenly items-center px-5">
+            
+            <div class="main w-[300px] h-[300px] custom-md:w-[500px] custom-md:h-[65vh] rounded-full overflow-hidden shadow-[0_0_50px_#144ea5] hover:animate-pulsar transition-all duration-300 mb-10 custom-md:mb-0" data-aos="zoom-out" data-aos-duration="3000">
+                <img src="img/main.jpg" alt="Profile" class="w-full h-full object-cover">
+            </div>
+            
+            <div class="content w-full custom-md:w-[40%] text-center custom-md:text-left">
+                <h1 class="text-3xl custom-md:text-5xl font-bold mb-2" data-aos="fade-left" data-aos-duration="1500" data-aos-delay="700">
+                    Hey, I'm <span class="text-main drop-shadow-[0_0_10px_#144ea5]">Fellipe</span>
+                </h1>
+                
+                <div class="typewriter text-2xl custom-md:text-4xl font-semibold mb-4" data-aos="fade-right" data-aos-duration="1500" data-aos-delay="900">
+                    I'm a <span class="typewriter-text text-main drop-shadow-[0_0_10px_#144ea5]"></span>
+                </div>
+                
+                <p class="text-sm custom-md:text-base mb-6 leading-relaxed" data-aos="flip-down" data-aos-duration="1500" data-aos-delay="1100">
+                    Desde pequeno curioso sobre como os computadores funcionam e a partir dessa curiosidade cresceu a vontade de aprender cada vez mais sobre o mundo da tecnologia, me levando a estudar programação e cibersegurança.
+                </p>
+                
+                <div class="social-links flex justify-center custom-md:justify-start gap-4">
+                    <a href="https://www.linkedin.com/in/felps17ls/" class="w-12 h-12 flex justify-center items-center border-2 border-main rounded-full text-main text-xl transition hover:scale-110 hover:bg-main hover:text-black hover:shadow-[0_0_10px_#144ea5]" data-aos="fade-up" data-aos-duration="1500" data-aos-delay="1300">
+                        <i class="fa-brands fa-linkedin"></i>
+                    </a>
+                    <a href="https://github.com/FelpsLS" class="w-12 h-12 flex justify-center items-center border-2 border-main rounded-full text-main text-xl transition hover:scale-110 hover:bg-main hover:text-black hover:shadow-[0_0_10px_#144ea5]" data-aos="fade-up" data-aos-duration="1500" data-aos-delay="1400">
+                        <i class="fa-brands fa-github"></i>
+                    </a>
                 </div>
             </div>
         </div>
     </section>
 
-    <section class="contact" id="contact">
-        <h1>Contato</h1>
-        <div class="contact-info">
-            <!-- <img src="img/email.png" alt="ícone de email" class="icon-contact"> -->
-            <!-- <p><a href="mailto:fellipelopessilva5@gmail.com">fellipelopessilva5@gmail.com</a></p> -->
-            <!-- <span><a href="mailto:fellipelopessilva5@gmail.com">fellipelopessilva5@gmail.com</a></span> -->
-            <div class="social-links">
-                <a href="https://www.linkedin.com/in/felps17ls/"><i class="fa-brands fa-linkedin"></i></a>
-                <a href="https://github.com/FelpsLS"><i class="fa-brands fa-github"></i></a>
-                <a href="mailto:fellipelopessilva5@gmail.com"><i class="fa-solid fa-envelope"></i></a>
+    <section class="projects min-h-[90vh] w-full flex flex-col justify-center items-center py-20 bg-cover bg-center" id="projects">
+        <h2 class="text-4xl text-main font-bold mb-16 drop-shadow-[0_0_5px_#144ea5]">Projects</h2>
+        
+        <div class="projects-box grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12 px-5">
+            <div class="projects-card h-[600px] max-w-[450px] bg-black/30 backdrop-blur-xl border-2 border-main rounded-[3rem] flex flex-col items-center justify-center text-center gap-6 p-8 shadow-[0_0_10px_#144ea5] hover:shadow-[0_0_30px_#144ea5] hover:scale-[1.02] transition duration-400 cursor-pointer">
+                <h3 class="text-2xl font-bold">Keylogger</h3>
+                <img src="img/keylogger.png" alt="Keylogger Project" class="w-full max-w-[200px] rounded-lg object-cover">
+                <p class="text-sm">
+                    Este é um projeto em C para um keylogger. Foi utilizado a biblioteca windows.h para o mapeamento da maioria das teclas e para ocultar a presença deste no sistema com a função ocultConsole, a utilização de arquivos para salvar as teclas pressionadas pelo usuário.
+                </p>
+                <div class="projects-links mt-2">
+                    <a href="https://github.com/FelpsLS/Keylogger" class="text-main hover:text-white underline font-bold transition">Veja o projeto</a>
+                </div>
             </div>
         </div>
     </section>
 
+    <section class="contact min-h-[40vh] w-full flex flex-col justify-center items-center py-10" id="contact">
+        <h1 class="text-4xl custom-md:text-6xl text-main font-bold mb-10 text-center">Contato</h1>
+        
+        <div class="contact-info bg-black border border-gray-600 rounded-2xl p-6 flex justify-center items-center shadow-lg">
+            <div class="social-links flex gap-6">
+                <a href="https://www.linkedin.com/in/felps17ls/" class="w-12 h-12 flex justify-center items-center border-2 border-main rounded-full text-main text-xl transition hover:scale-110 hover:bg-main hover:text-black hover:shadow-[0_0_10px_#144ea5]">
+                    <i class="fa-brands fa-linkedin"></i>
+                </a>
+                
+                <a href="https://github.com/FelpsLS" class="w-12 h-12 flex justify-center items-center border-2 border-main rounded-full text-main text-xl transition hover:scale-110 hover:bg-main hover:text-black hover:shadow-[0_0_10px_#144ea5]">
+                    <i class="fa-brands fa-github"></i>
+                </a>
+                
+                <a href="mailto:fellipelopessilva5@gmail.com" class="w-12 h-12 flex justify-center items-center border-2 border-main rounded-full text-main text-xl transition hover:scale-110 hover:bg-main hover:text-black hover:shadow-[0_0_10px_#144ea5]">
+                    <i class="fa-solid fa-envelope"></i>
+                </a>
+            </div>
+        </div>
+    </section>
 
     <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
     <script>
@@ -87,5 +178,4 @@
     </script>
     <script src="js/script.js"></script>
 </body>
-
 </html>
