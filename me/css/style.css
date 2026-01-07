@@ -411,6 +411,10 @@ section{
         width: 50%;
         height: 60%;
     }
+
+    .projects-card{
+        margin-bottom: 3rem;
+    }
 }
 
 @media (max-width:440px){
